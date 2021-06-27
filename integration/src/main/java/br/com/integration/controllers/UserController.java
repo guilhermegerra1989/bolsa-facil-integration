@@ -23,15 +23,8 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@GetMapping("/User/GetUsers")
-	@ApiOperation(value="Retorna Usuários Mock")
-	public List<String> GetUsers() {
-		List<String> users = Arrays.asList("Manoel", "Joel", "Pedro", "Aristeu", "Josué");
-		return users;
-	}
-	
-	@GetMapping("/User/FindAll")
 	@ApiOperation(value="Retorna Usuários do Banco Postgres")
+	@GetMapping("/User/FindAll")
 	public List<User> FindAll() {
 		return this.userService.findAll();
 	}
