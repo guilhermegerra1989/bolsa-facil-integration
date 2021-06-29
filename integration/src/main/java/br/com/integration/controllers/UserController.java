@@ -1,6 +1,5 @@
 package br.com.integration.controllers;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/api/User")
 @Api(value="API REST User")
 @CrossOrigin(origins="*")
 public class UserController {
@@ -24,7 +23,7 @@ public class UserController {
 	private UserService userService;
 
 	@ApiOperation(value="Retorna Usuários do Banco Postgres")
-	@GetMapping("/User/FindAll")
+	@GetMapping("/FindAll")
 	public List<User> FindAll() {
 		return this.userService.findAll();
 	}
